@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeOverhaul_package" extends="json-default" namespace="/">
+		<!-- 非生产性大修项目可研评审要点细则 -->
+		<action name="OverhaulJson" class="com.service.grade.gradeOverhaul"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddOverhaul" class="com.service.grade.gradeOverhaul"
+			method="AddOverhaul">
+			<result name="ok">/grade/Overhaul/gradeOverhaul.jsp</result>
+		</action>
+		<action name="SaveOverhaul" class="com.service.grade.gradeOverhaul"
+			method="SaveOverhaul">
+			<result name="ok">/grade/Overhaul/gradeOverhaul.jsp</result>
+		</action>
+		<action name="OverhaulAction" class="com.service.grade.gradeOverhaul"
+			method="OverhaulAction">
+			<result name="ok">/grade/Overhaul/gradeOverhaulData.jsp</result>
+		</action>
+		<action name="EditOverhaul" class="com.service.grade.gradeOverhaul"
+			method="EditOverhaul">
+			<result name="ok">/grade/Overhaul/gradeOverhaul.jsp</result>
+		</action>
+		<action name="DeleteOverhaul" class="com.service.grade.gradeOverhaul"
+			method="DeleteOverhaul">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">OverhaulAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditOverhaulOpinion" class="com.service.grade.gradeOverhaul"
+			method="EditOpinion">
+			<result name="ok">/grade/Overhaul/OverhaulOpinion.jsp</result>
+		</action>
+		<action name="SaveOverhaulOpinion" class="com.service.grade.gradeOverhaul"
+			method="SaveOpinion">
+			<result name="ok">/grade/Overhaul/OverhaulOpinion.jsp</result>
+		</action>
+		<action name="downOverhaulOpinion" class="com.service.grade.gradeOverhaul"
+			method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>    

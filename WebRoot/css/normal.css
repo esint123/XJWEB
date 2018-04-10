@@ -1,0 +1,43 @@
+body
+{
+	font-size: 9pt;
+	font-family: "Microsoft Yahei";
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	background-color: #e1f0eb;
+}
+
+INPUT
+{
+	border-width:1px;
+	border-color:#838383;
+
+}
+
+
+table
+{
+	font-size: 9pt;
+	font-family: "Microsoft Yahei";
+}
+.RaisePageButton
+{
+    width:91px; 
+    height:19px;  
+    background:url(../images/pageFrame/RaisePageButton.jpg);
+    border-width:0px; 
+    color :#FFFFFF; 
+    font-weight:bold;
+}
+.btn
+{
+    width:79px; 
+    height:22px; 
+    background-image:url(../images/pageFrame/button1.gif); 
+    border-width:0px; 
+    color :#4e4e4e; 
+    font-size:12px; 
+}
+

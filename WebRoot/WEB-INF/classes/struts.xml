@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="2147483648"></constant>
+	<!-- 配网农网项目可研代初设评审要点细则 -->
+	<include file="struts/gradeRural.xml"></include>
+	<!-- 产业基建项目可研评审要点细则 -->
+	<include file="struts/gradeCapital.xml"></include>
+	<!-- 产业技改、大修项目可研评审要点细则 -->
+	<include file="struts/gradeIndustry.xml"></include>
+	<!-- 非生产性大修项目可研评审要点细则 -->
+	<include file="struts/gradeOverhaul.xml"></include>
+	<!-- 非生产性技改项目可研评审要点细则 -->
+	<include file="struts/gradeTechnical.xml"></include>
+	<!-- 固定资产零星购置项目可研评审要点细则 -->
+	<include file="struts/gradeAssets.xml"></include>
+	<!-- 管理咨询项目可研评审要点细则 -->
+	<include file="struts/gradeManage.xml"></include>
+	<!-- 教育培训项目可研评审要点细则 -->
+	<include file="struts/gradeTeach.xml"></include>
+	
+	<include file="struts/itemLibrary.xml"></include>
+</struts>    

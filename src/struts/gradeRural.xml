@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeRural_package" extends="json-default" namespace="/">
+		<!-- 配网农网项目可研代初设评审要点细则 -->
+		<action name="RuralJson" class="com.service.grade.gradeRural"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddRural" class="com.service.grade.gradeRural"
+			method="AddRural">
+			<result name="ok">/grade/Rural/gradeRural.jsp</result>
+		</action>
+		<action name="SaveRural" class="com.service.grade.gradeRural"
+			method="SaveRural">
+			<result name="ok">/grade/Rural/gradeRural.jsp</result>
+		</action>
+		<action name="RuralAction" class="com.service.grade.gradeRural"
+			method="RuralAction">
+			<result name="ok">/grade/Rural/gradeRuralData.jsp</result>
+		</action>
+		<action name="EditRural" class="com.service.grade.gradeRural"
+			method="EditRural">
+			<result name="ok">/grade/Rural/gradeRural.jsp</result>
+		</action>
+		<action name="DeleteRural" class="com.service.grade.gradeRural"
+			method="DeleteRural">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">RuralAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditRuralOpinion" class="com.service.grade.gradeRural"
+			method="EditOpinion">
+			<result name="ok">/grade/Rural/RuralOpinion.jsp</result>
+		</action>
+		<action name="SaveRuralOpinion" class="com.service.grade.gradeRural"
+			method="SaveOpinion">
+			<result name="ok">/grade/Rural/RuralOpinion.jsp</result>
+		</action>
+		<action name="downRuralOpinion" class="com.service.grade.gradeRural"
+			method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>    

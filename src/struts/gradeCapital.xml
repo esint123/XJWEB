@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeCapital_package" extends="json-default" namespace="/">
+		<!-- 产业基建项目可研评审要点细则 -->
+		<action name="CapitalJson" class="com.service.grade.gradeCapital" method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddCapital" class="com.service.grade.gradeCapital" method="AddCapital">
+			<result name="ok">/grade/Capital/gradeCapital.jsp</result>
+		</action>
+		<action name="SaveCapital" class="com.service.grade.gradeCapital" method="SaveCapital">
+			<result name="ok">/grade/Capital/gradeCapital.jsp</result>
+		</action>
+		<action name="CapitalAction" class="com.service.grade.gradeCapital" method="CapitalAction">
+			<result name="ok">/grade/Capital/gradeCapitalData.jsp</result>
+		</action>
+		<action name="EditCapital" class="com.service.grade.gradeCapital" method="EditCapital">
+			<result name="ok">/grade/Capital/gradeCapital.jsp</result>
+		</action>
+		<action name="DeleteCapital" class="com.service.grade.gradeCapital" method="DeleteCapital">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">CapitalAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditCapitalOpinion" class="com.service.grade.gradeCapital" method="EditOpinion">
+			<result name="ok">/grade/Capital/CapitalOpinion.jsp</result>
+		</action>
+		<action name="SaveCapitalOpinion" class="com.service.grade.gradeCapital" method="SaveOpinion">
+			<result name="ok">/grade/Capital/CapitalOpinion.jsp</result>
+		</action>
+		<action name="downCapitalOpinion" class="com.service.grade.gradeCapital" method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>   

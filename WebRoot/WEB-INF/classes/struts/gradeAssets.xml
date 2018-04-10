@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeAssets_package" extends="json-default" namespace="/">
+		<!-- 非生产性大修项目可研评审要点细则 -->
+		<action name="AssetsJson" class="com.service.grade.gradeAssets"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddAssets" class="com.service.grade.gradeAssets"
+			method="AddAssets">
+			<result name="ok">/grade/Assets/gradeAssets.jsp</result>
+		</action>
+		<action name="SaveAssets" class="com.service.grade.gradeAssets"
+			method="SaveAssets">
+			<result name="ok">/grade/Assets/gradeAssets.jsp</result>
+		</action>
+		<action name="AssetsAction" class="com.service.grade.gradeAssets"
+			method="AssetsAction">
+			<result name="ok">/grade/Assets/gradeAssetsData.jsp</result>
+		</action>
+		<action name="EditAssets" class="com.service.grade.gradeAssets"
+			method="EditAssets">
+			<result name="ok">/grade/Assets/gradeAssets.jsp</result>
+		</action>
+		<action name="DeleteAssets" class="com.service.grade.gradeAssets"
+			method="DeleteAssets">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">AssetsAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditAssetsOpinion" class="com.service.grade.gradeAssets"
+			method="EditOpinion">
+			<result name="ok">/grade/Assets/AssetsOpinion.jsp</result>
+		</action>
+		<action name="SaveAssetsOpinion" class="com.service.grade.gradeAssets"
+			method="SaveOpinion">
+			<result name="ok">/grade/Assets/AssetsOpinion.jsp</result>
+		</action>
+		<action name="downAssetsOpinion" class="com.service.grade.gradeAssets"
+			method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>    

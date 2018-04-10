@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeTeach_package" extends="json-default" namespace="/">
+		<!-- 非生产性大修项目可研评审要点细则 -->
+		<action name="TeachJson" class="com.service.grade.gradeTeach"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddTeach" class="com.service.grade.gradeTeach"
+			method="AddTeach">
+			<result name="ok">/grade/Teach/gradeTeach.jsp</result>
+		</action>
+		<action name="SaveTeach" class="com.service.grade.gradeTeach"
+			method="SaveTeach">
+			<result name="ok">/grade/Teach/gradeTeach.jsp</result>
+		</action>
+		<action name="TeachAction" class="com.service.grade.gradeTeach"
+			method="TeachAction">
+			<result name="ok">/grade/Teach/gradeTeachData.jsp</result>
+		</action>
+		<action name="EditTeach" class="com.service.grade.gradeTeach"
+			method="EditTeach">
+			<result name="ok">/grade/Teach/gradeTeach.jsp</result>
+		</action>
+		<action name="DeleteTeach" class="com.service.grade.gradeTeach"
+			method="DeleteTeach">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">TeachAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditTeachOpinion" class="com.service.grade.gradeTeach"
+			method="EditOpinion">
+			<result name="ok">/grade/Teach/TeachOpinion.jsp</result>
+		</action>
+		<action name="SaveTeachOpinion" class="com.service.grade.gradeTeach"
+			method="SaveOpinion">
+			<result name="ok">/grade/Teach/TeachOpinion.jsp</result>
+		</action>
+		<action name="downTeachOpinion" class="com.service.grade.gradeTeach"
+			method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>    

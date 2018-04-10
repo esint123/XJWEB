@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="itemLibrary_package" extends="json-default" namespace="/">
+		<action name="AttacheFile" class="com.service.ItemlibraryManager"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<!-- 35kV线路改造工程表 -->
+		<action name="Remake35Action" class="com.service.ItemLibrary.Remake35"
+			method="Remake35Action">
+			<result name="ok">/ItemLibrary/Remake35/Remake35.jsp</result>
+		</action>
+		<action name="Remake35Json" class="com.service.ItemLibrary.Remake35"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="DeleteRemake35" class="com.service.ItemLibrary.Remake35"
+			method="DeleteRemake35">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">Remake35Action</param>
+				<param name="treeid">${treeid}</param>
+				<param name="stage">${stage}</param>
+			</result>
+		</action>
+		<action name="EditRemake35" class="com.service.ItemLibrary.Remake35"
+			method="EditRemake35">
+			<result name="ok">/ItemLibrary/Remake35/EditRemake35.jsp</result>
+		</action>
+		<action name="SaveRemake35" class="com.service.ItemLibrary.Remake35"
+			method="SaveRemake35">
+			<result name="ok">/ItemLibrary/Remake35/EditRemake35.jsp</result>
+		</action>
+
+		<!-- 10(20、6)kV电网改造工程表 -->
+		<action name="Remake10Action" class="com.service.ItemLibrary.Remake10"
+			method="Remake10Action">
+			<result name="ok">/ItemLibrary/Remake10/Remake10.jsp</result>
+		</action>
+		<action name="Remake10Json" class="com.service.ItemLibrary.Remake10"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="DeleteRemake10" class="com.service.ItemLibrary.Remake10"
+			method="DeleteRemake10">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">Remake10Action</param>
+				<param name="treeid">${treeid}</param>
+				<param name="stage">${stage}</param>
+			</result>
+		</action>
+		<action name="EditRemake10" class="com.service.ItemLibrary.Remake10"
+			method="EditRemake10">
+			<result name="ok">/ItemLibrary/Remake10/EditRemake10.jsp</result>
+		</action>
+		<action name="SaveRemake10" class="com.service.ItemLibrary.Remake10"
+			method="SaveRemake10">
+			<result name="ok">/ItemLibrary/Remake10/EditRemake10.jsp</result>
+		</action>
+
+		<!-- 10(20、6)kV电网新建工程表 -->
+		<action name="New10Action" class="com.service.ItemLibrary.New10"
+			method="New10Action">
+			<result name="ok">/ItemLibrary/New10/New10.jsp</result>
+		</action>
+		<action name="New10Json" class="com.service.ItemLibrary.New10"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="DeleteNew10" class="com.service.ItemLibrary.New10"
+			method="DeleteNew10">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">New10Action</param>
+				<param name="treeid">${treeid}</param>
+				<param name="stage">${stage}</param>
+			</result>
+		</action>
+		<action name="EditNew10" class="com.service.ItemLibrary.New10"
+			method="EditNew10">
+			<result name="ok">/ItemLibrary/New10/EditNew10.jsp</result>
+		</action>
+		<action name="SaveNew10" class="com.service.ItemLibrary.New10"
+			method="SaveNew10">
+			<result name="ok">/ItemLibrary/New10/EditNew10.jsp</result>
+		</action>
+
+		<!-- 35kV新、扩建工程表 -->
+		<action name="New35Action" class="com.service.ItemLibrary.New35"
+			method="New35Action">
+			<result name="ok">/ItemLibrary/New35/New35.jsp</result>
+		</action>
+		<action name="New35Json" class="com.service.ItemLibrary.New35"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="DeleteNew35" class="com.service.ItemLibrary.New35"
+			method="DeleteNew35">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">New35Action</param>
+				<param name="treeid">${treeid}</param>
+				<param name="stage">${stage}</param>
+			</result>
+		</action>
+		<action name="EditNew35" class="com.service.ItemLibrary.New35"
+			method="EditNew35">
+			<result name="ok">/ItemLibrary/New35/EditNew35.jsp</result>
+		</action>
+		<action name="SaveNew35" class="com.service.ItemLibrary.New35"
+			method="SaveNew35">
+			<result name="ok">/ItemLibrary/New35/EditNew35.jsp</result>
+		</action>
+
+		<!-- 35kV变电站改造工程表 -->
+		<action name="Station35Action" class="com.service.ItemLibrary.Station35"
+			method="Station35Action">
+			<result name="ok">/ItemLibrary/Station35/Station35.jsp</result>
+		</action>
+		<action name="Station35Json" class="com.service.ItemLibrary.Station35"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="DeleteStation35" class="com.service.ItemLibrary.Station35"
+			method="DeleteStation35">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">Station35Action</param>
+				<param name="treeid">${treeid}</param>
+				<param name="stage">${stage}</param>
+			</result>
+		</action>
+		<action name="EditStation35" class="com.service.ItemLibrary.Station35"
+			method="EditStation35">
+			<result name="ok">/ItemLibrary/Station35/EditStation35.jsp</result>
+		</action>
+		<action name="SaveStation35" class="com.service.ItemLibrary.Station35"
+			method="SaveStation35">
+			<result name="ok">/ItemLibrary/Station35/EditStation35.jsp</result>
+		</action>
+
+		<!-- 上传每条记录的附件 -->
+		<action name="toAttachUpload" class="com.service.FileUpload"
+			method="AttachUpload">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2147483648</param>
+			</interceptor-ref>
+			<result type="json" name="success">
+				<param name="contentType">
+					text/html
+				</param>
+			</result>
+			<result type="json" name="error">
+				<param name="contentType">
+					text/html
+				</param>
+			</result>
+		</action>
+		<!-- 上传项目库Excel文件 -->
+		<action name="toUpload" class="com.service.FileUpload" method="Upload">
+			<result type="json" name="success">
+				<param name="contentType">
+					text/html
+				</param>
+			</result>
+			<result type="json" name="error">
+				<param name="contentType">
+					text/html
+				</param>
+			</result>
+		</action>
+		<!-- 模板树初始化 -->
+		<action name="getTemplateTree" class="com.service.TemplateTreeHandle"
+			method="initTree">
+			<result type="json">
+				<param name="root">
+					treeJsonString
+				</param>
+			</result>
+		</action>
+		<action name="downloadTo" class="com.service.TemplateTreeHandle"
+			method="downloadToExcel">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="downloadToAttach" class="com.service.TemplateTreeHandle"
+			method="downloadToAttach">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream;</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<!-- 树初始化 -->
+		<action name="getTree" class="com.service.TreeHandle" method="initTree">
+			<result type="json">
+				<param name="root">
+					treeJsonString
+				</param>
+			</result>
+		</action>
+		<!-- 评审类型树初始化 -->
+		<action name="getReviewTree" class="com.service.ReviewTreeHandle"
+			method="initTree">
+			<result type="json">
+				<param name="root">
+					treeJsonString
+				</param>
+			</result>
+		</action>
+	</package>
+</struts>   

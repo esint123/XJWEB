@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="gradeTechnical_package" extends="json-default" namespace="/">
+		<!-- 非生产性大修项目可研评审要点细则 -->
+		<action name="TechnicalJson" class="com.service.grade.gradeTechnical"
+			method="returnList">
+			<result name="list" type="json"></result>
+		</action>
+		<action name="AddTechnical" class="com.service.grade.gradeTechnical"
+			method="AddTechnical">
+			<result name="ok">/grade/Technical/gradeTechnical.jsp</result>
+		</action>
+		<action name="SaveTechnical" class="com.service.grade.gradeTechnical"
+			method="SaveTechnical">
+			<result name="ok">/grade/Technical/gradeTechnical.jsp</result>
+		</action>
+		<action name="TechnicalAction" class="com.service.grade.gradeTechnical"
+			method="TechnicalAction">
+			<result name="ok">/grade/Technical/gradeTechnicalData.jsp</result>
+		</action>
+		<action name="EditTechnical" class="com.service.grade.gradeTechnical"
+			method="EditTechnical">
+			<result name="ok">/grade/Technical/gradeTechnical.jsp</result>
+		</action>
+		<action name="DeleteTechnical" class="com.service.grade.gradeTechnical"
+			method="DeleteTechnical">
+			<result name="ok" type="redirectAction">
+				<param name="actionName">TechnicalAction</param>
+				<param name="treeid">${treeid}</param>
+			</result>
+		</action>
+		<!-- 评审意见 -->
+		<action name="EditTechnicalOpinion" class="com.service.grade.gradeTechnical"
+			method="EditOpinion">
+			<result name="ok">/grade/Technical/TechnicalOpinion.jsp</result>
+		</action>
+		<action name="SaveTechnicalOpinion" class="com.service.grade.gradeTechnical"
+			method="SaveOpinion">
+			<result name="ok">/grade/Technical/TechnicalOpinion.jsp</result>
+		</action>
+		<action name="downTechnicalOpinion" class="com.service.grade.gradeTechnical"
+			method="downOpinion">
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+</struts>    
